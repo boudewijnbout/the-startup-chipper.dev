@@ -30,12 +30,11 @@ a {
 
 section {
     padding: 3rem 4rem;
-    height: 100vh;
 }
 
 .btn-secondary {
-    background-color: var(--main-bg);
-    color: #fff;
+    background-color: #fff;
+    color: #262626;
     padding: 8px 21px;
     border-radius: 60px;
     font-weight: 500;
@@ -58,7 +57,7 @@ header.scrolled {
 }
 
 .test {
-    fill: #262626;
+    fill: #fff;
     transition: 300ms;
 }
 
@@ -150,7 +149,8 @@ header .btn-secondary.dark {
 .banner {
     position: relative;
     z-index: 998;
-    background: #F8F4F1;
+    background: var(--main-bg);
+    height: 100vh;
     transition: background-color .3s;
 }
 
@@ -162,7 +162,7 @@ header .btn-secondary.dark {
 
 /* Banner title */
 .banner h1 {
-    color: #262626;
+    color: #fff;
     font-weight: 300;
     font-size: 5rem;
     margin-bottom: 1.5rem;
@@ -223,7 +223,7 @@ header .btn-secondary.dark {
 .banner a {
     font-weight: 500;
     margin-top: 1rem;
-    color: #262626;
+    color: #fff;
     position: relative;
 }
 
@@ -249,6 +249,116 @@ header .btn-secondary.dark {
 
 .banner h1.dark, a.dark {
     color: #fff;
+}
+
+/*--------------------------------------------------------------
+# About Us Section
+--------------------------------------------------------------*/
+
+.about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* About Us Section Title */
+.about-us h2 {
+    font-size: 1.5rem;
+}
+
+.about-us h2:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 25px;
+    background-color: #e6b515;
+    margin-right: .5rem;
+    position: relative;
+    top: 3px;
+}
+
+/* About Us Section Subtitle */
+.about-us h3 {
+    font-weight: 400;
+    margin-top: .5rem;
+    margin-left: .6rem;
+}
+
+/* About Us Section Paragraph */
+.about-us p {
+    margin-top: .35rem;
+    margin-left: .6rem;
+    width: 75%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.about-us span {
+    background-color: #e6b515;
+    position: absolute;
+    border-radius: 40px;
+    width: 90px;
+    height: 75px;
+    right: 90px;
+    display: none;
+}
+
+/* About Us Team Image */
+.about-us img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/*--------------------------------------------------------------
+# Customers
+--------------------------------------------------------------*/
+
+.customers {
+    background-color: #F8F4F1;
+}
+
+/* Customers Section Title */
+.customers h2 {
+    font-size: 1.5rem;
+}
+
+.customers h2:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 25px;
+    background-color: #e6b515;
+    margin-right: .5rem;
+    position: relative;
+    top: 3px;
+}
+
+/* Customers Logo Wrapper */
+.customer-logo-wrapper {
+    display: flex;
+    margin-top: .5rem;
+}
+
+/* Customers Logo */
+.customer-logo-wrapper img {
+    width: 125px;
+    height: auto;
+    margin-right: 4rem;
+}
+
+.customer-logo-wrapper img:nth-child(2) {
+    width: 100px;
+    margin-top: .5rem;
+}
+
+.customer-logo-wrapper img:nth-child(4) {
+    width: 100px;
+    margin-top: .5rem;
+}
+
+.customer-logo-wrapper img:nth-child(6) {
+    width: 100px;
+    margin-top: .5rem;
 }
 
 
