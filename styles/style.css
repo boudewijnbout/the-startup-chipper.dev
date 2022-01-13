@@ -30,6 +30,7 @@ a {
 
 section {
     padding: 3rem 4rem;
+    height: 100vh;
 }
 
 .btn-secondary {
@@ -61,6 +62,10 @@ header.scrolled {
     transition: 300ms;
 }
 
+.test.dark {
+    fill: #fff;
+}
+
 header svg.toggle {
     fill: white;
 }
@@ -81,9 +86,61 @@ header ul li {
     color: #262626;
 }
 
+/* Header link style darkmode */
+header ul li.dark {
+    color: #fff;
+}
+
 /* Header contact button */
 header .btn-secondary {
     margin-right: 25px;
+}
+
+/* Header contact button darkmode */
+header .btn-secondary.dark {
+    background: #fff;
+    color: #262626;
+}
+
+/*--------------------------------------------------------------
+# Darkmode Switch
+--------------------------------------------------------------*/
+.darkmode-switch {
+    cursor: pointer;
+    display: inline-block;
+    position: fixed;
+    right: 10px;
+    top: 108px;
+    z-index: 999;
+}
+
+/* Darkmode switch icon */
+.darkmode-switch img {
+    position: relative;
+    width: 35px;
+    height: auto;
+    opacity: .45;
+    top: 8px;
+    left: 7px;
+    transition: .3s;
+}
+
+.darkmode-switch img:hover {
+    opacity: 1;
+}
+
+.darkmode-switch::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    background: rgba(247, 195, 23, 0.8);
+    top: 0;
+    right: -24px;
+    transform: skew(10deg);
+    border-radius: 8px;
+    z-index: -1;
 }
 
 /*--------------------------------------------------------------
@@ -92,47 +149,43 @@ header .btn-secondary {
 
 .banner {
     position: relative;
-    height: 75vh;
     z-index: 998;
-    top: -50px;
+    background: #F8F4F1;
+    transition: background-color .3s;
 }
 
-.banner:before {
-    content: "";
-    background: #F8F4F1;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: skewY(
-            -3deg);
-    z-index: -1;
+/* Banner content */
+.banner-content {
+    margin: 8rem 0 0 9rem;
+    position: relative;
 }
 
 /* Banner title */
 .banner h1 {
     color: #262626;
     font-weight: 300;
-    font-size: 4em;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
     max-width: 3em;
-    line-height: 1.5;
-    /*justify-content: flex-start;*/
-    /*align-items: center;*/
+    line-height: 1;
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr 1.75fr 1.75fr 1.75fr ;
+    grid-template-columns: 1fr 1.75fr 1.75fr 1.75fr;
 }
 
+/* Banner title image */
+.banner h1 img {
+    width: 8rem;
+}
+
+/* Banner grid columns */
 .banner h1 :nth-child(1) {
     grid-column: 1 / 2;
 }
 
 .banner h1 :nth-child(2) {
     grid-column: 2 / 3;
+    position: relative;
 }
 
 .banner h1 :nth-child(3) {
@@ -144,9 +197,11 @@ header .btn-secondary {
 }
 
 .banner h1 :nth-child(5) {
-    grid-column: 3 / 5;
+    grid-column: 3 / 4;
     transform: scale(1.25);
     fill: #262626;
+    justify-self: flex-end;
+    margin-left: 2rem;
 }
 
 .banner h1 :nth-child(6) {
@@ -157,19 +212,45 @@ header .btn-secondary {
 .banner h1 :nth-child(7) {
     transform: translateY(-2rem);
     width: 6rem;
-    margin-left: 2rem;
+    margin-left: -2rem;
 }
 
 .banner h1 > * {
     margin-right: 1rem;
 }
 
-/* Banner button */
-.banner-content a {
-    background: #e6b515;
-    padding: .5rem .5rem;
-    border-radius: 3px;
+/* Banner Link */
+.banner a {
+    font-weight: 500;
+    margin-top: 1rem;
+    color: #262626;
+    position: relative;
 }
+
+.banner a::after {
+    content: '';
+    width: 0;
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+    background: #F7C117;
+    position: absolute;
+    transition: all .3s;
+}
+
+.banner a:hover::after {
+    width: 100%;
+}
+
+/* Banner darkmode styles */
+.banner.dark {
+    background-color: var(--main-bg);
+}
+
+.banner h1.dark, a.dark {
+    color: #fff;
+}
+
 
 /*--------------------------------------------------------------
 # Team Section
