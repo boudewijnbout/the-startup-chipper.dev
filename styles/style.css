@@ -8,14 +8,20 @@
     padding: 0;
 }
 
+main {
+    max-height: 100vh;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+}
+
 /* Variables */
 :root {
     --main-bg: #262626;
+    --accent-bg: #F7C117;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    height: 200vh;
 }
 
 /* Page titles */
@@ -30,12 +36,14 @@ a {
 
 section {
     padding: 3rem 4rem;
+    height: 100vh;
+    scroll-snap-align: center;
 }
 
 .btn-secondary {
     background-color: #fff;
     color: #262626;
-    padding: 8px 21px;
+    padding: 0.5rem  1.313rem;
     border-radius: 60px;
     font-weight: 500;
 }
@@ -50,6 +58,8 @@ header {
     z-index: 999;
     display: flex;
     transition: background-color 0.3s;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 header.scrolled {
@@ -82,7 +92,7 @@ header ul {
 }
 
 header ul li {
-    color: #262626;
+    color: #fff;
 }
 
 /* Header link style darkmode */
@@ -150,7 +160,6 @@ header .btn-secondary.dark {
     position: relative;
     z-index: 998;
     background: var(--main-bg);
-    height: 100vh;
     transition: background-color .3s;
 }
 
@@ -186,10 +195,32 @@ header .btn-secondary.dark {
 .banner h1 :nth-child(2) {
     grid-column: 2 / 3;
     position: relative;
+    width: 11rem;
 }
 
 .banner h1 :nth-child(3) {
     grid-column: 3 / 5;
+}
+
+/* Line under word */
+.banner h1 :nth-child(3):after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: var(--accent-bg);
+    width: 0;
+    animation: lineWidth 1.5s forwards;
+}
+
+/* Animate the line from left to right */
+@keyframes lineWidth {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 .banner h1 :nth-child(4) {
@@ -198,10 +229,9 @@ header .btn-secondary.dark {
 
 .banner h1 :nth-child(5) {
     grid-column: 3 / 4;
-    transform: scale(1.25);
+    transform: scale(1.4);
     fill: #262626;
     justify-self: flex-end;
-    margin-left: 2rem;
 }
 
 .banner h1 :nth-child(6) {
@@ -211,7 +241,7 @@ header .btn-secondary.dark {
 
 .banner h1 :nth-child(7) {
     transform: translateY(-2rem);
-    width: 6rem;
+    width: 7.5rem;
     margin-left: -2rem;
 }
 
@@ -233,7 +263,7 @@ header .btn-secondary.dark {
     display: block;
     height: 2px;
     margin-top: 2px;
-    background: #F7C117;
+    background: var(--accent-bg);
     position: absolute;
     transition: all .3s;
 }
@@ -258,11 +288,48 @@ header .btn-secondary.dark {
 .about-us {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #F8F4F1;
+    position: relative;
+    padding-top: 5.5rem;
+}
+
+/* About Us Text Wrapper */
+.about-us-text-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 0;
+    top: 2.5rem;
+}
+
+/* Mask shape */
+.about-us-text-wrapper:before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--accent-bg);
+    top: 0;
+    left: -200px;
+    transform: skew(-10deg);
+    border-radius: 8px;
+    width: 100%;
+    height: 60%;
+    z-index: -1;
+    margin-left: 2rem;
+}
+
+/* About Us Text Wrapper Logo */
+.about-us-text-wrapper svg {
+    position: relative;
+    top: .5rem;
+    left: .25rem;
+    fill: #fff;
 }
 
 /* About Us Section Title */
 .about-us h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    color: #262626;
 }
 
 .about-us h2:before {
@@ -270,7 +337,7 @@ header .btn-secondary.dark {
     display: inline-block;
     width: 4px;
     height: 25px;
-    background-color: #e6b515;
+    background-color: #fff;
     margin-right: .5rem;
     position: relative;
     top: 3px;
@@ -285,21 +352,43 @@ header .btn-secondary.dark {
 
 /* About Us Section Paragraph */
 .about-us p {
-    margin-top: .35rem;
+    margin-top: .5rem;
     margin-left: .6rem;
-    width: 75%;
+    width: 60%;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
+    line-height: 1.5;
 }
 
+/* About Us Btn Wrapper */
+.about-us-btn-wrapper {
+    margin-left: .6rem;
+    margin-top: 1.5rem;
+}
+
+.about-us-btn-wrapper a {
+    background-color: var(--main-bg);
+    padding: 8px 21px;
+    font-size: .9rem;
+    border-radius: 3.75rem;
+    margin-right: .25rem;
+    transition: all 300ms;
+    display: inline-block;
+}
+
+.about-us-btn-wrapper a:hover {
+    transform: translateY(-6px);
+}
+
+/* Dot behind image */
 .about-us span {
-    background-color: #e6b515;
+    background-color: var(--main-bg);
     position: absolute;
     border-radius: 40px;
     width: 90px;
     height: 75px;
-    right: 90px;
-    display: none;
+    right: 20px;
+    z-index: 1;
 }
 
 /* About Us Team Image */
@@ -307,6 +396,8 @@ header .btn-secondary.dark {
     width: 90%;
     height: auto;
     border-radius: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 /*--------------------------------------------------------------
@@ -314,7 +405,7 @@ header .btn-secondary.dark {
 --------------------------------------------------------------*/
 
 .customers {
-    background-color: #F8F4F1;
+    background-color: var(--main-bg);
 }
 
 /* Customers Section Title */
@@ -360,7 +451,6 @@ header .btn-secondary.dark {
     width: 100px;
     margin-top: .5rem;
 }
-
 
 /*--------------------------------------------------------------
 # Team Section
