@@ -35,7 +35,6 @@ a {
 }
 
 section {
-    /*padding: 3rem 4rem;*/
     padding: 4rem 1.5rem;
     height: 100vh;
     scroll-snap-align: center;
@@ -44,73 +43,9 @@ section {
 .btn-secondary {
     background-color: #fff;
     color: #262626;
-    padding: 0.5rem  1.313rem;
+    padding: 0.5rem 1.313rem;
     border-radius: 60px;
     font-weight: 500;
-}
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-header {
-    padding: 1rem 4rem;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    display: flex;
-    transition: background-color 0.3s;
-    backdrop-filter: blur(5px);
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-}
-
-header.scrolled {
-    background: rgba(0, 0, 0, 0.7);
-}
-
-.test {
-    fill: #fff;
-    transition: 300ms;
-}
-
-.test.dark {
-    fill: #fff;
-}
-
-header svg.toggle {
-    fill: white;
-}
-
-/* Header navigation */
-header nav {
-    margin-left: auto;
-    display: flex;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
-
-header ul li {
-    color: #fff;
-}
-
-/* Header link style darkmode */
-header ul li.dark {
-    color: #fff;
-}
-
-/* Header contact button */
-header .btn-secondary {
-    margin-right: 25px;
-}
-
-/* Header contact button darkmode */
-header .btn-secondary.dark {
-    background: #fff;
-    color: #262626;
 }
 
 /*--------------------------------------------------------------
@@ -167,23 +102,23 @@ header .btn-secondary.dark {
 
 /* Banner content */
 .banner-content {
-    /*margin: 8rem 0 0 9rem;*/
+    margin: 8rem 0 0 0;
     position: relative;
+    display: flex;
+    max-width: 21rem;
 }
 
 /* Banner title */
 .banner h1 {
     color: #fff;
     font-weight: 300;
-    font-size: clamp(2rem, 2.5vw, 5rem);
     margin-bottom: 1.5rem;
-    width: 50%;
-    /*max-width: 3em;*/
     line-height: 1;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1.75fr 1.75fr 1.75fr;
     justify-items: start;
+    font-size: clamp(2.5rem, 10vw, 5rem);
 }
 
 /* Banner title image */
@@ -200,8 +135,6 @@ header .btn-secondary.dark {
 .banner h1 :nth-child(2) {
     grid-column: 2 / 3;
     position: relative;
-    /*width: 11rem;*/
-    width: 8rem;
 }
 
 .banner h1 :nth-child(3) {
@@ -236,7 +169,6 @@ header .btn-secondary.dark {
 .banner h1 :nth-child(5) {
     grid-column: 3 / 4;
     transform: scale(1.4);
-    fill: #262626;
     justify-self: flex-end;
 }
 
@@ -246,10 +178,12 @@ header .btn-secondary.dark {
 }
 
 .banner h1 :nth-child(7) {
-    transform: translateY(-2rem);
+    /*transform: translateY(-2rem);*/
     /*width: 7.5rem;*/
-    /*width: 4rem;*/
-    margin-left: -2rem;
+    width: 16vw;
+    /*margin-left: -2rem;*/
+    margin-left: -1rem;
+    transform: translateY(-1rem);
 }
 
 .banner h1 > * {
@@ -557,13 +491,42 @@ header .btn-secondary.dark {
     top: 3px;
 }
 
-@media (min-width: 1200px) {
-    .banner h1 {
-        font-size: 5rem;
+/*--------------------------------------------------------------
+# Media Query's
+--------------------------------------------------------------*/
+
+@media (min-width: 30rem) {
+
+    /* General Section */
+    section {
+        padding: 3rem 4rem;
     }
 
+    .banner h1 :nth-child(7) {
+        transform: translateY(-2rem);
+        margin-left: -2rem;
+    }
+}
+
+
+@media (min-width: 75rem) {
+
+    /* Banner image */
     .banner h1 img {
-        /*width: 8rem;*/
-        width: 10vw;
+        width: 8rem;
+    }
+
+    .banner h1 :nth-child(2) {
+        width: 11rem;
+    }
+
+    .banner h1 :nth-child(5) {
+        transform: scale(1.4);
+    }
+
+    .banner h1 :nth-child(7) {
+        width: 7.5rem;
+        margin-left: -2rem;
+        transform: translateY(-2rem);
     }
 }

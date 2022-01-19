@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+    padding: 1rem 4rem;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    transition: background-color 0.3s;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Header navigation */
+header nav {
+    margin-left: auto;
+    display: flex;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    color: #fff;
+}
+
+header svg {
+    fill: #fff;
+}
