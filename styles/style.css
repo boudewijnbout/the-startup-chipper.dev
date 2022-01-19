@@ -11,7 +11,7 @@
 main {
     max-height: 100vh;
     overflow: scroll;
-    scroll-snap-type: y mandatory;
+    /*scroll-snap-type: y mandatory;*/
 }
 
 /* Variables */
@@ -35,7 +35,8 @@ a {
 }
 
 section {
-    padding: 3rem 4rem;
+    /*padding: 3rem 4rem;*/
+    padding: 4rem 1.5rem;
     height: 100vh;
     scroll-snap-align: center;
 }
@@ -60,6 +61,7 @@ header {
     transition: background-color 0.3s;
     backdrop-filter: blur(5px);
     background: rgba(0, 0, 0, 0.7);
+    display: none;
 }
 
 header.scrolled {
@@ -165,7 +167,7 @@ header .btn-secondary.dark {
 
 /* Banner content */
 .banner-content {
-    margin: 8rem 0 0 9rem;
+    /*margin: 8rem 0 0 9rem;*/
     position: relative;
 }
 
@@ -173,18 +175,21 @@ header .btn-secondary.dark {
 .banner h1 {
     color: #fff;
     font-weight: 300;
-    font-size: 5rem;
+    font-size: clamp(2rem, 2.5vw, 5rem);
     margin-bottom: 1.5rem;
-    max-width: 3em;
+    width: 50%;
+    /*max-width: 3em;*/
     line-height: 1;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1.75fr 1.75fr 1.75fr;
+    justify-items: start;
 }
 
 /* Banner title image */
 .banner h1 img {
-    width: 8rem;
+    /*width: 8rem;*/
+    width: 20vw;
 }
 
 /* Banner grid columns */
@@ -195,7 +200,8 @@ header .btn-secondary.dark {
 .banner h1 :nth-child(2) {
     grid-column: 2 / 3;
     position: relative;
-    width: 11rem;
+    /*width: 11rem;*/
+    width: 8rem;
 }
 
 .banner h1 :nth-child(3) {
@@ -241,7 +247,8 @@ header .btn-secondary.dark {
 
 .banner h1 :nth-child(7) {
     transform: translateY(-2rem);
-    width: 7.5rem;
+    /*width: 7.5rem;*/
+    /*width: 4rem;*/
     margin-left: -2rem;
 }
 
@@ -315,6 +322,7 @@ header .btn-secondary.dark {
     height: 60%;
     z-index: -1;
     margin-left: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 /* About Us Text Wrapper Logo */
@@ -547,4 +555,15 @@ header .btn-secondary.dark {
     margin-right: .5rem;
     position: relative;
     top: 3px;
+}
+
+@media (min-width: 1200px) {
+    .banner h1 {
+        font-size: 5rem;
+    }
+
+    .banner h1 img {
+        /*width: 8rem;*/
+        width: 10vw;
+    }
 }
