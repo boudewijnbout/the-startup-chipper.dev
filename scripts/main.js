@@ -10,17 +10,29 @@ window.onscroll = function () {
         svg.classList.remove('toggle');
     }
 }
+//
+// const target = document.querySelector('.animated-text');
+//
+// function handleIntersection(entries) {
+//     entries.map((entry) => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('visible');
+//         }
+//
+//         else {
+//             entry.target.classList.remove('visible');
+//         }
+//     })
+// }
+//
+// const observer = new IntersectionObserver(handleIntersection);
+//
+// observer.observe(target);
 
-const darkmodeToggle = document.querySelector('.darkmode-switch');
+// Menu
+const menuToggle = document.querySelector('header span');
+const menu = document.querySelector('.animated-menu');
 
-darkmodeToggle.addEventListener('click', function () {
-
-    // Header
-    document.querySelector('header .btn-secondary').classList.toggle('dark');
-
-    // Banner
-    document.querySelector('.banner').classList.toggle('dark');
-    document.querySelector('.banner h1').classList.toggle('dark');
-    document.querySelector('.test').classList.toggle('dark');
-    document.querySelector('.banner a').classList.toggle('dark');
-});
+menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+})

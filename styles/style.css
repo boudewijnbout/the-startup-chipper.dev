@@ -10,7 +10,6 @@
 
 main {
     max-height: 100vh;
-    overflow-x: scroll;
     /*scroll-snap-type: y mandatory;*/
 }
 
@@ -38,6 +37,7 @@ a {
 section {
     padding: 4rem 1.5rem;
     scroll-snap-align: center;
+    /*height: 100vh;*/
 }
 
 .btn-secondary {
@@ -97,7 +97,6 @@ section {
     position: relative;
     z-index: 998;
     background-color: var(--main-bg);
-    transition: background-color .3s;
 }
 
 /* Banner content */
@@ -390,8 +389,8 @@ section {
 /* Customer Card */
 .customer-card {
     margin-top: 1.25rem;
-    background: var(--secondary-bg);
-    padding: .25rem .25rem;
+    background-color: var(--secondary-bg);
+    padding: .25rem .7rem;
     text-align: center;
     border-radius: 10px;
     padding-bottom: 1rem;
@@ -424,6 +423,11 @@ section {
     background-color: var(--accent-bg);
     border-radius: 3.75rem;
     padding: 4px 15px;
+}
+
+/* All Customers Link */
+.customers a {
+
 }
 
 /*--------------------------------------------------------------
@@ -545,6 +549,14 @@ section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 15px;
+    }
+
+    .customers {
+
+    }
+
+    section {
+        height: 100vh;
     }
 }
 

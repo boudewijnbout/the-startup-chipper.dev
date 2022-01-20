@@ -26,8 +26,32 @@ header ul {
 
 header ul li {
     color: #fff;
+    margin-left: 1rem;
 }
 
 header svg {
     fill: #fff;
+}
+
+/*--------------------------------------------------------------
+# Animated menu
+--------------------------------------------------------------*/
+
+.animated-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: red;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: var(--secondary-bg);
+    transform: translateY(-100%);
+    transition: all 300ms;
+}
+
+.animated-menu.open {
+    transform: translateY(0);
 }
