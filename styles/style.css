@@ -10,6 +10,7 @@
 
 main {
     max-height: 100vh;
+    /*overflow-x: hidden;*/
     /*scroll-snap-type: y mandatory;*/
 }
 
@@ -37,7 +38,7 @@ a {
 section {
     padding: 4rem 1.5rem;
     scroll-snap-align: center;
-    /*height: 100vh;*/
+    height: 100vh;
 }
 
 .btn-secondary {
@@ -347,15 +348,87 @@ section {
 --------------------------------------------------------------*/
 
 .customers {
-    background-color: var(--main-bg);
+    /*background-color: var(--main-bg);*/
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 0;
+    grid-gap: 1.875rem;
 }
 
-/* Customers Section Title */
-.customers h3 {
+.customers-text-wrapper {
+    background-color: var(--main-bg);
+    padding: 3rem 4rem;
+}
+
+.customers-text-wrapper h3 {
     font-size: 1.6rem;
     color: #fff;
     font-weight: 500;
 }
+
+.customers-text-wrapper p {
+    margin-top: 0.5rem;
+    margin-left: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.customers-cards-wrapper {
+    list-style: none;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    margin-top: 2rem;
+}
+
+.customers-cards-wrapper-sticky {
+    position: sticky;
+    top: 6rem;
+}
+
+.customers-cards-wrapper-sticky li {
+    background-color: var(--accent-bg);
+    margin-bottom: 1rem;
+    padding: 1.5rem .5rem;
+    margin-right: 1.875rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.customers-cards-wrapper-sticky li p {
+    color: #262626;
+    margin: .5rem 4rem 1.25rem 4rem;
+}
+
+.customers-cards-wrapper-sticky li a {
+    background-color: var(--main-bg);
+    color: #fff;
+    padding: 8px 21px;
+    border-radius: 3.75rem;
+    font-size: .9rem;
+}
+
+.customers-cards-wrapper li:nth-child(1) img {
+    width: 20%;
+}
+
+.customers-cards-wrapper li:nth-child(2) img {
+    width: 25%;
+}
+
+.customers-cards-wrapper li:nth-child(3) img {
+    width: 35%;
+}
+
+/*!* Customers Section Title *!*/
+/*.customers h3 {*/
+/*    font-size: 1.6rem;*/
+/*    color: #fff;*/
+/*    font-weight: 500;*/
+/*}*/
 
 .customers h3:before {
     content: '';
@@ -369,66 +442,66 @@ section {
 }
 
 /* Customers Paragraph */
-.customers p {
-    margin-top: 0.5rem;
-    margin-left: 0.6rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #fff;
-    margin-bottom: 1rem;
-}
+/*.customers p {*/
+/*    margin-top: 0.5rem;*/
+/*    margin-left: 0.6rem;*/
+/*    font-family: 'Inter', sans-serif;*/
+/*    font-size: 1rem;*/
+/*    line-height: 1.5;*/
+/*    color: #fff;*/
+/*    margin-bottom: 1rem;*/
+/*}*/
 
-/* Customers Cards Wrapper */
-.customers-cards-wrapper {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-}
+/*!* Customers Cards Wrapper *!*/
+/*.customers-cards-wrapper {*/
+/*    list-style: none;*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr;*/
+/*}*/
 
-/* Customer Card */
-.customer-card {
-    margin-top: 1.25rem;
-    background-color: var(--secondary-bg);
-    padding: .25rem .7rem;
-    text-align: center;
-    border-radius: 10px;
-    padding-bottom: 1rem;
-}
+/*!* Customer Card *!*/
+/*.customer-card {*/
+/*    margin-top: 1.25rem;*/
+/*    background-color: var(--secondary-bg);*/
+/*    padding: .25rem .7rem;*/
+/*    text-align: center;*/
+/*    border-radius: 10px;*/
+/*    padding-bottom: 1rem;*/
+/*}*/
 
-/* Customer Card Image */
-.customer-card img {
-    margin-top: 1rem;
-}
+/*!* Customer Card Image *!*/
+/*.customer-card img {*/
+/*    margin-top: 1rem;*/
+/*}*/
 
-.customer-card img:nth-child(1) {
-    width: 40%;
-}
+/*.customer-card img:nth-child(1) {*/
+/*    width: 40%;*/
+/*}*/
 
-.customer-card img:nth-child(2) {
-    width: 60%;
-}
+/*.customer-card img:nth-child(2) {*/
+/*    width: 60%;*/
+/*}*/
 
-.customer-card img:nth-child(3) {
-    width: 70%;
-}
+/*.customer-card img:nth-child(3) {*/
+/*    width: 70%;*/
+/*}*/
 
-/* Customer Card Paragraph */
-.customer-card p {
-    color: #262626;
-}
+/*!* Customer Card Paragraph *!*/
+/*.customer-card p {*/
+/*    color: #262626;*/
+/*}*/
 
-/* Customer Card Button */
-.customer-card a {
-    background-color: var(--accent-bg);
-    border-radius: 3.75rem;
-    padding: 4px 15px;
-}
+/*!* Customer Card Button *!*/
+/*.customer-card a {*/
+/*    background-color: var(--accent-bg);*/
+/*    border-radius: 3.75rem;*/
+/*    padding: 4px 15px;*/
+/*}*/
 
 /* All Customers Link */
-.customers a {
+/*.customers a {*/
 
-}
+/*}*/
 
 /*--------------------------------------------------------------
 # Team Section
@@ -545,12 +618,11 @@ section {
 }
 
 @media (min-width: 40rem) {
-    .customers-cards-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
-    }
-
+    /*.customers-cards-wrapper {*/
+    /*    display: grid;*/
+    /*    grid-template-columns: 1fr 1fr;*/
+    /*    grid-gap: 15px;*/
+    /*}*/
     .customers {
 
     }
@@ -561,13 +633,12 @@ section {
 }
 
 @media (min-width: 62.5rem) {
-    .customers-cards-wrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .customer-card:nth-child(2) {
-        margin-top: 5rem;
-    }
+    /*.customers-cards-wrapper {*/
+    /*    grid-template-columns: repeat(3, 1fr);*/
+    /*}*/
+    /*.customer-card:nth-child(2) {*/
+    /*    margin-top: 5rem;*/
+    /*}*/
 }
 
 @media (min-width: 75rem) {
