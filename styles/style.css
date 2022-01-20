@@ -10,13 +10,14 @@
 
 main {
     max-height: 100vh;
-    overflow: scroll;
+    overflow-x: scroll;
     /*scroll-snap-type: y mandatory;*/
 }
 
 /* Variables */
 :root {
     --main-bg: #262626;
+    --secondary-bg: #F8F4F1;
     --accent-bg: #F7C117;
 }
 
@@ -36,7 +37,6 @@ a {
 
 section {
     padding: 4rem 1.5rem;
-    height: 100vh;
     scroll-snap-align: center;
 }
 
@@ -96,7 +96,7 @@ section {
 .banner {
     position: relative;
     z-index: 998;
-    background: var(--main-bg);
+    background-color: var(--main-bg);
     transition: background-color .3s;
 }
 
@@ -146,7 +146,7 @@ section {
     content: '';
     display: block;
     height: 2px;
-    background: var(--accent-bg);
+    background-color: var(--accent-bg);
     width: 0;
     animation: lineWidth 1.5s forwards;
 }
@@ -204,7 +204,7 @@ section {
     display: block;
     height: 2px;
     margin-top: 2px;
-    background: var(--accent-bg);
+    background-color: var(--accent-bg);
     position: absolute;
     transition: all .3s;
 }
@@ -229,7 +229,7 @@ section {
 .about-us {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #F8F4F1;
+    background-color: var(--secondary-bg);
     position: relative;
     padding-top: 5.5rem;
 }
@@ -250,7 +250,7 @@ section {
     background-color: var(--accent-bg);
     top: 0;
     left: -200px;
-    transform: skew(-10deg);
+    transform: skewX(-10deg);
     border-radius: 8px;
     width: 100%;
     height: 60%;
@@ -329,8 +329,9 @@ section {
     border-radius: 40px;
     width: 90px;
     height: 75px;
-    right: 20px;
+    right: 25px;
     z-index: 1;
+    top: -25px;
 }
 
 /* About Us Team Image */
@@ -351,11 +352,13 @@ section {
 }
 
 /* Customers Section Title */
-.customers h2 {
-    font-size: 1.5rem;
+.customers h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 500;
 }
 
-.customers h2:before {
+.customers h3:before {
     content: '';
     display: inline-block;
     width: 4px;
@@ -366,32 +369,61 @@ section {
     top: 3px;
 }
 
-/* Customers Logo Wrapper */
-.customer-logo-wrapper {
-    display: flex;
-    margin-top: .5rem;
+/* Customers Paragraph */
+.customers p {
+    margin-top: 0.5rem;
+    margin-left: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 1rem;
 }
 
-/* Customers Logo */
-.customer-logo-wrapper img {
-    width: 125px;
-    height: auto;
-    margin-right: 4rem;
+/* Customers Cards Wrapper */
+.customers-cards-wrapper {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-.customer-logo-wrapper img:nth-child(2) {
-    width: 100px;
-    margin-top: .5rem;
+/* Customer Card */
+.customer-card {
+    margin-top: 1.25rem;
+    background: var(--secondary-bg);
+    padding: .25rem .25rem;
+    text-align: center;
+    border-radius: 10px;
+    padding-bottom: 1rem;
 }
 
-.customer-logo-wrapper img:nth-child(4) {
-    width: 100px;
-    margin-top: .5rem;
+/* Customer Card Image */
+.customer-card img {
+    margin-top: 1rem;
 }
 
-.customer-logo-wrapper img:nth-child(6) {
-    width: 100px;
-    margin-top: .5rem;
+.customer-card img:nth-child(1) {
+    width: 40%;
+}
+
+.customer-card img:nth-child(2) {
+    width: 60%;
+}
+
+.customer-card img:nth-child(3) {
+    width: 70%;
+}
+
+/* Customer Card Paragraph */
+.customer-card p {
+    color: #262626;
+}
+
+/* Customer Card Button */
+.customer-card a {
+    background-color: var(--accent-bg);
+    border-radius: 3.75rem;
+    padding: 4px 15px;
 }
 
 /*--------------------------------------------------------------
@@ -436,7 +468,7 @@ section {
 
 .team-person {
     padding: 1rem 1rem;
-    background-color: #F8F4F1;
+    background-color: var(--secondary-bg);
     border-radius: 5px;
     text-align: center;
 }
@@ -471,7 +503,7 @@ section {
 .services {
     position: relative;
     margin-top: 1rem;
-    background: #F8F4F1;
+    background-color: var(--secondary-bg);
 }
 
 .services h3 {
@@ -508,10 +540,32 @@ section {
     }
 }
 
+@media (min-width: 40rem) {
+    .customers-cards-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+}
+
+@media (min-width: 62.5rem) {
+    .customers-cards-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .customer-card:nth-child(2) {
+        margin-top: 5rem;
+    }
+}
 
 @media (min-width: 75rem) {
 
-    /* Banner image */
+    /* Banner Content */
+    .banner-content {
+        margin: 8rem 0 0 9rem;
+    }
+
+    /* Banner Image */
     .banner h1 img {
         width: 8rem;
     }
