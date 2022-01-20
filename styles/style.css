@@ -485,7 +485,7 @@ a.dark {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -13em;
+    margin-top: -15em;
     margin-left: 6em;
     z-index: 99;
     font-weight: bolder;
@@ -500,7 +500,7 @@ a.dark {
 .kevin_info span{
     display: flex;
     margin-left: 5.5em;
-    margin-top: -10em;
+    margin-top: -12em;
     color:white;
 
 }
@@ -508,43 +508,44 @@ a.dark {
 .hans_info span{
     display: flex;
     margin-left: 5.5em;
-    margin-top: -10em;
+    margin-top: -12em;
     color:white;
 }
 
 .lisa_info span{
     display: flex;
     margin-left: 5.5em;
-    margin-top: -10em;
+    margin-top: -12em;
     color:white;
 }
 
 .eva_info span{
     display: flex;
     margin-left: 5.5em;
-    margin-top: -10em;
+    margin-top: -12em;
     color:white;
 }
 .name_hans p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -13em;
+    margin-top: -15em;
     margin-left: 6em;
     z-index: 99;
+    width: 20em;
+    height: 3em; 
     font-weight: bolder;
     background-color:var(--accent-bg);
     color: var(--main-bg);
     opacity: 0.9;
-    width: 20em;
-    height: 3em; 
+    border-radius: 3.4px;
 }
 
 .name_lisa p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -13em;
+    margin-top: -15em;
     margin-left: 6em;
     z-index: 99;
     font-weight: bolder;
@@ -553,13 +554,14 @@ a.dark {
     opacity: 0.9;
     width: 20em;
     height: 3em;
+    border-radius: 3.4px;
 }
 
 .name_eva p{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -13em;
+    margin-top: -15em;
     margin-left: 6em;
     z-index: 99;
     font-weight: bolder;
@@ -568,6 +570,7 @@ a.dark {
     opacity: 0.9;
     width: 20em;
     height: 3em;
+    border-radius: 3.4px;
 }
 
 /* Customers Logo Wrapper */
