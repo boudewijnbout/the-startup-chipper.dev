@@ -38,7 +38,7 @@ a {
 section {
     padding: 4rem 1.5rem;
     scroll-snap-align: center;
-    /*height: 100vh;*/
+    height: 100vh;
 }
 
 .btn-secondary {
@@ -348,18 +348,16 @@ section {
 --------------------------------------------------------------*/
 
 .customers {
-    background-color: var(--main-bg);
+    /*background-color: var(--main-bg);*/
     display: grid;
-    /*grid-template-columns: 1.5fr 1fr;*/
+    grid-template-columns: 1.5fr 1fr;
     padding: 0;
     grid-gap: 1.875rem;
 }
 
 .customers-text-wrapper {
-    /*background-color: var(--main-bg);*/
-    /*padding: 3rem 4rem;*/
-    /*padding: 4rem 1.5rem;*/
-    padding: 4rem 1.5rem 0 1.5rem;
+    background-color: var(--main-bg);
+    padding: 3rem 4rem;
 }
 
 .customers-text-wrapper h3 {
@@ -382,8 +380,7 @@ section {
     list-style: none;
     /*display: flex;*/
     /*flex-direction: column;*/
-    /*margin-top: 2rem;*/
-    padding: 0rem 1.5rem;
+    margin-top: 2rem;
 }
 
 .customers-cards-wrapper-sticky {
@@ -395,7 +392,7 @@ section {
     background-color: var(--accent-bg);
     margin-bottom: 1rem;
     padding: 1.5rem .5rem;
-    /*margin-right: 1.875rem;*/
+    margin-right: 1.875rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     text-align: center;
     border-radius: 10px;
@@ -584,6 +581,7 @@ section {
     position: relative;
     margin-top: 1rem;
     background-color: var(--secondary-bg);
+    
 }
 
 .services h3 {
@@ -602,6 +600,99 @@ section {
     position: relative;
     top: 3px;
 }
+/*--------------------------------------------------------------
+# onze diensten Chippr
+--------------------------------------------------------------*/
+.logo_s{
+    fill: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:0.5em;
+    margin-left: 5em;
+    
+    
+  }
+  .box{
+    max-width: 70em;
+    height: auto;
+    margin-left: 3em;
+    color: white; 
+    font-family: 'Roboto', sans-serif;
+    margin-top: -11em;
+  }
+  
+  .box .all-box{
+    display: flex;
+    margin-top: 100px;
+    align-items: center;
+    justify-content:center;
+    margin-left: -5em;
+    
+  }
+  .box .all-box .left{
+    width: 48em;
+    background: grey;
+    height: 15em;
+    background: #F7C117;
+    border-radius: 10px;  
+    margin-right:-21em;
+    padding-left: -10em;
+     
+  }
+  
+  .box .all-box .rigth{
+    width:36em;
+    background:#262626;
+    border-radius: 5px;
+    min-height: auto;
+    margin-left: 1.7em;
+    padding: 12px;
+    letter-spacing: .1em;
+    line-height: 22px;
+    padding-bottom:20px;
+    height: 18em;
+    margin-top: 8em;
+    
+     
+  }
+  .box .all-box .rigth h4{
+    margin: 12px;
+    margin-top: 0.5em;
+    font-size: 24px;
+     
+  }
+  
+  .box .all-box .rigth p{
+    font-weight: 300; 
+    margin-top: 2.5em;
+    padding: 1px;
+    margin: 12px;
+  }
+  
+  .box .all-box .rigth a{
+   
+    margin: 12px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    background: white;
+    padding: 10px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s;
+    border-radius: 5px;
+  
+  }
+  
+  .box .all-box .rigth a:hover{
+    background: #000;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  
+
 
 /*--------------------------------------------------------------
 # Media Query's
@@ -618,6 +709,29 @@ section {
         transform: translateY(-2rem);
         margin-left: -2rem;
     }
+    
+    .box{
+        width: 30em;
+       margin-left: -2em;
+        
+    }
+.box .all-box .rigth{
+    margin-left: -1em;
+    width: 20em;
+    height:16em;
+}
+
+.box .all-box .left{
+    width: 25em;
+    margin-right: -21.5em;
+}
+.box :nth-child(2){
+    margin-top: -1em;
+}
+.box :nth-child(3){
+    margin-top: -1em;
+}
+    
 }
 
 @media (min-width: 40rem) {
@@ -626,29 +740,22 @@ section {
     /*    grid-template-columns: 1fr 1fr;*/
     /*    grid-gap: 15px;*/
     /*}*/
-    section {
-        /*height: 100vh;*/
-    }
-
     .customers {
-        grid-template-columns: 1.5fr 1fr;
-        background: none;
+
     }
 
-    .customers-text-wrapper {
-        background-color: var(--main-bg);
+    section {
+        height: 100vh;
     }
-
-    .customers-cards-wrapper {
-        margin-top: 2rem;
+    .box{
+        
+        margin-left: 4em;
     }
-
-    .customers-cards-wrapper-sticky li {
-        margin-right: 1.875rem;
-    }
+    
 }
 
-@media (min-width: 62.5rem) {
+  
+@media (min-width: 60rem) {
     /*.customers-cards-wrapper {*/
     /*    grid-template-columns: repeat(3, 1fr);*/
     /*}*/
@@ -656,10 +763,16 @@ section {
     /*    margin-top: 5rem;*/
     /*}*/
 
-    section {
-        height: 100vh;
+    .box{
+    
+        margin-left: -1em;
     }
 
+    .box :nth-child(3){
+        margin-right: -60em;
+        margin-top: -47em;
+    }
+    
 }
 
 @media (min-width: 75rem) {
@@ -687,4 +800,38 @@ section {
         margin-left: -2rem;
         transform: translateY(-2rem);
     }
+    .box{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;
+       gap: 3px;
+       margin-left:5em;
+  }
+  .box .all-box .rigth{
+      width: 23em;
+      height: 15em;
+      margin-left: 4em;
+      margin-bottom: 8em;
+
+  }
+  .box .all-box .left{
+      height: 19em;
+      width: 30em;
+  }
+  .box :nth-child(2){
+      margin-top: -31.3em;
+      margin-left: 90em;
+  }
+
+  .box :nth-child(3){
+      margin-top: -8em;
+      margin-left: -20em;
+  }
+
+  .logo_s{
+      margin-top: 8em;
+  }
 }
+  
+   
