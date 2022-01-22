@@ -638,7 +638,7 @@ section {
     border-radius: 10px;  
     margin-right:-21em;
     padding-left: -10em;
-     
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
   
   .box .all-box .rigth{
