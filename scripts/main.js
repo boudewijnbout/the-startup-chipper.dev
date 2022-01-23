@@ -13,7 +13,7 @@ window.onscroll = function () {
 
 const aboutImg = document.querySelector('.about-us img');
 const customerCards = document.querySelectorAll('.customers-cards-wrapper-sticky li');
-
+const serviceCards = document.querySelectorAll('.services-cards-wrapper li');
 
 function handleIntersection(entries) {
     entries.map((entry) => {
@@ -28,8 +28,13 @@ function handleIntersection(entries) {
 const observer = new IntersectionObserver(handleIntersection);
 
 observer.observe(aboutImg);
+
 customerCards.forEach(customerCard => {
     observer.observe(customerCard)
+});
+
+serviceCards.forEach(serviceCard => {
+    observer.observe(serviceCard)
 });
 
 // Menu
