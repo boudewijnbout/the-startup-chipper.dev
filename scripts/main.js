@@ -10,29 +10,32 @@ window.onscroll = function () {
         svg.classList.remove('toggle');
     }
 }
-//
-// const target = document.querySelector('.animated-text');
-//
-// function handleIntersection(entries) {
-//     entries.map((entry) => {
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('visible');
-//         }
-//
-//         else {
-//             entry.target.classList.remove('visible');
-//         }
-//     })
-// }
-//
-// const observer = new IntersectionObserver(handleIntersection);
-//
-// observer.observe(target);
+
+const aboutImg = document.querySelector('.about-us img');
+const customerCards = document.querySelectorAll('.customers-cards-wrapper-sticky li');
+
+
+function handleIntersection(entries) {
+    entries.map((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    })
+}
+
+const observer = new IntersectionObserver(handleIntersection);
+
+observer.observe(aboutImg);
+customerCards.forEach(customerCard => {
+    observer.observe(customerCard)
+});
 
 // Menu
 const menuToggle = document.querySelector('header span');
 const menu = document.querySelector('.animated-menu');
 
-menuToggle.addEventListener('click', function() {
+menuToggle.addEventListener('click', function () {
     menu.classList.toggle('open');
 })

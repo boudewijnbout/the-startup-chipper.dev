@@ -98,11 +98,13 @@ section {
     position: relative;
     z-index: 998;
     background-color: var(--main-bg);
+    height: 100vh;
 }
 
 /* Banner content */
 .banner-content {
-    margin: 8rem 0 0 0;
+    /*margin: 8rem 0 0 0;*/
+    margin: 4rem 0 0 0;
     position: relative;
     display: flex;
     max-width: 21rem;
@@ -228,24 +230,26 @@ section {
 
 .about-us {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr;*/
     background-color: var(--secondary-bg);
     position: relative;
-    padding-top: 5.5rem;
+    /*padding-top: 5.5rem;*/
+    padding: 3rem 1.5rem;
 }
 
 /* About Us Text Wrapper */
 .about-us-text-wrapper {
     position: relative;
     z-index: 2;
-    padding: 2rem 0;
-    top: 2.5rem;
+    padding: 2rem 1rem;
+    /*top: 2.5rem;*/
+    background: var(--accent-bg);
+    border-radius: 10px;
 }
 
 /* Mask shape */
 .about-us-text-wrapper:before {
     content: '';
-    display: block;
     position: absolute;
     background-color: var(--accent-bg);
     top: 0;
@@ -257,6 +261,7 @@ section {
     z-index: -1;
     margin-left: 2rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    display: none;
 }
 
 /* About Us Text Wrapper Logo */
@@ -316,6 +321,7 @@ section {
     margin-right: .25rem;
     transition: all 300ms;
     display: inline-block;
+    margin-bottom: .5rem;
 }
 
 .about-us-btn-wrapper a:hover {
@@ -332,15 +338,26 @@ section {
     right: 25px;
     z-index: 1;
     top: -25px;
+    display: none;
 }
 
 /* About Us Team Image */
 .about-us img {
-    width: 90%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     position: relative;
     z-index: 2;
+    opacity: 0;
+    transition: 500ms;
+    transform: translateY(0);
+    transition-delay: 300ms;
+    top: 2rem;
+}
+
+.about-us img.visible {
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 /*--------------------------------------------------------------
@@ -359,7 +376,7 @@ section {
     /*background-color: var(--main-bg);*/
     /*padding: 3rem 4rem;*/
     /*padding: 4rem 1.5rem;*/
-    padding: 4rem 1.5rem 0 1.5rem;
+    padding: 2rem 1.5rem 0 1.5rem
 }
 
 .customers-text-wrapper h3 {
@@ -399,6 +416,26 @@ section {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     text-align: center;
     border-radius: 10px;
+    opacity: 0;
+}
+
+.customers-cards-wrapper-sticky li:nth-child(1) {
+    transition: 400ms;
+}
+
+.customers-cards-wrapper-sticky li:nth-child(2) {
+    transition: 400ms;
+    transition-delay: 400ms;
+}
+
+.customers-cards-wrapper-sticky li:nth-child(3) {
+    transition: 400ms;
+    transition-delay: 400ms;
+}
+
+.customers-cards-wrapper-sticky li.visible {
+    opacity: 1;
+    transform: translateY(-20px);
 }
 
 .customers-cards-wrapper-sticky li p {
@@ -412,6 +449,12 @@ section {
     padding: 8px 21px;
     border-radius: 3.75rem;
     font-size: .9rem;
+    transition: all 300ms;
+    display: inline-block;
+}
+
+.customers-cards-wrapper-sticky li a:hover {
+    transform: translateY(-6px);
 }
 
 .customers-cards-wrapper li:nth-child(1) img {
@@ -581,8 +624,6 @@ section {
 --------------------------------------------------------------*/
 
 .services {
-    position: relative;
-    margin-top: 1rem;
     background-color: var(--secondary-bg);
 }
 
@@ -601,6 +642,16 @@ section {
     margin-right: .5rem;
     position: relative;
     top: 3px;
+}
+
+.services p {
+    margin-top: 0.5rem;
+    margin-left: 0.6rem;
+    width: 30%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-break: break-all;
 }
 
 /*--------------------------------------------------------------
@@ -630,6 +681,20 @@ section {
         /*height: 100vh;*/
     }
 
+    .about-us span {
+        display: block;
+    }
+
+    /* About Us Section */
+    .about-us {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-us-text-wrapper {
+        margin-right: 1rem;
+    }
+
+    /* Customers Section */
     .customers {
         grid-template-columns: 1.5fr 1fr;
         background: none;
@@ -637,6 +702,7 @@ section {
 
     .customers-text-wrapper {
         background-color: var(--main-bg);
+        padding: 3rem 4rem;
     }
 
     .customers-cards-wrapper {
@@ -655,11 +721,25 @@ section {
     /*.customer-card:nth-child(2) {*/
     /*    margin-top: 5rem;*/
     /*}*/
-
     section {
         height: 100vh;
     }
 
+    /* About Us Section */
+    .about-us {
+        padding-top: 5.5rem;
+    }
+
+    .about-us-text-wrapper {
+        top: 2.5rem;
+        background: none;
+    }
+
+    .about-us-text-wrapper:before {
+        display: block;
+        left: -85px;
+        height: 65%;
+    }
 }
 
 @media (min-width: 75rem) {
@@ -686,5 +766,19 @@ section {
         width: 7.5rem;
         margin-left: -2rem;
         transform: translateY(-2rem);
+    }
+
+    /* About Us Section */
+    .about-us img {
+        width: 90%;
+    }
+
+    .about-us-text-wrapper {
+        padding: 3rem 4rem;
+    }
+
+    .about-us-text-wrapper:before {
+        left: -200px;
+        margin-left: 2rem;
     }
 }
