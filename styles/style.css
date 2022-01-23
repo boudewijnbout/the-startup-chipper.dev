@@ -604,7 +604,7 @@ section {
 # onze diensten Chippr
 --------------------------------------------------------------*/
 .logo_s{
-    fill: #262626;
+    fill: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -617,8 +617,9 @@ section {
     max-width: 70em;
     height: auto;
     margin-left: 3em;
-    color: white; 
+    color: #000000; 
     font-family: 'Roboto', sans-serif;
+  
     margin-top: -11em;
   }
   
@@ -634,7 +635,7 @@ section {
     width: 48em;
     background: grey;
     height: 15em;
-    background: #F7C117;
+    background: #262626;
     border-radius: 10px;  
     margin-right:-21em;
     padding-left: -10em;
@@ -643,7 +644,7 @@ section {
   
   .box .all-box .rigth{
     width:36em;
-    background:#262626;
+    background: var(--accent-bg);
     border-radius: 5px;
     min-height: auto;
     margin-left: 1.7em;
@@ -677,7 +678,7 @@ section {
     text-decoration: none;
     background: white;
     padding: 10px;
-    color: #000;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     font-size: 14px;
     transition: 0.3s;
