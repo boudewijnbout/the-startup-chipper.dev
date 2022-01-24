@@ -17,8 +17,6 @@ html, body {
 
 main {
     max-height: 100vh;
-    /*overflow-x: hidden;*/
-    /*scroll-snap-type: y mandatory;*/
 }
 
 /* Variables */
@@ -45,7 +43,6 @@ a {
 section {
     padding: 4rem 1.5rem;
     scroll-snap-align: center;
-    /*height: 100vh;*/
 }
 
 .btn-secondary {
@@ -54,47 +51,6 @@ section {
     padding: 0.5rem 1.313rem;
     border-radius: 60px;
     font-weight: 500;
-}
-
-/*--------------------------------------------------------------
-# Darkmode Switch
---------------------------------------------------------------*/
-.darkmode-switch {
-    cursor: pointer;
-    display: inline-block;
-    position: fixed;
-    right: 10px;
-    top: 108px;
-    z-index: 999;
-}
-
-/* Darkmode switch icon */
-.darkmode-switch img {
-    position: relative;
-    width: 35px;
-    height: auto;
-    opacity: .45;
-    top: 8px;
-    left: 7px;
-    transition: .3s;
-}
-
-.darkmode-switch img:hover {
-    opacity: 1;
-}
-
-.darkmode-switch::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 60px;
-    height: 50px;
-    background: rgba(247, 195, 23, 0.8);
-    top: 0;
-    right: -24px;
-    transform: skew(10deg);
-    border-radius: 8px;
-    z-index: -1;
 }
 
 /*--------------------------------------------------------------
