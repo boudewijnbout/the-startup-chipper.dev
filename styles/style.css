@@ -631,7 +631,7 @@ section {
     margin-left: -5em;
     
   }
-  .box .all-box .left{
+  .box .all-box .box_left{
     width: 48em;
     background: grey;
     height: 15em;
@@ -642,7 +642,7 @@ section {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
   
-  .box .all-box .rigth{
+  .box .all-box .box_rigth{
     width:36em;
     background: var(--accent-bg);
     border-radius: 5px;
@@ -657,21 +657,21 @@ section {
     
      
   }
-  .box .all-box .rigth h4{
+  .box .all-box .box_rigth h4{
     margin: 12px;
     margin-top: 0.5em;
     font-size: 24px;
      
   }
   
-  .box .all-box .rigth p{
+  .box .all-box .box_rigth p{
     font-weight: 300; 
     margin-top: 2.5em;
     padding: 1px;
     margin: 12px;
   }
   
-  .box .all-box .rigth a{
+  .box .all-box .box_rigth a{
    
     margin: 12px;
     margin-bottom: 30px;
@@ -686,7 +686,7 @@ section {
   
   }
   
-  .box .all-box .rigth a:hover{
+  .box .all-box .box_rigth a:hover{
     background: #000;
     color: #fff;
     transition: 0.3s;
@@ -716,13 +716,13 @@ section {
        margin-left: -2em;
         
     }
-.box .all-box .rigth{
+.box .all-box .box_rigth{
     margin-left: -1em;
     width: 20em;
     height:16em;
 }
 
-.box .all-box .left{
+.box .all-box .box_left{
     width: 25em;
     margin-right: -21.5em;
 }
@@ -809,14 +809,14 @@ section {
        gap: 3px;
        margin-left:5em;
   }
-  .box .all-box .rigth{
+  .box .all-box .box_rigth{
       width: 23em;
       height: 15em;
       margin-left: 4em;
       margin-bottom: 8em;
 
   }
-  .box .all-box .left{
+  .box .all-box .box_left{
       height: 19em;
       width: 30em;
   }
