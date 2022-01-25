@@ -26,6 +26,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Disable Scrolling */
+.scrolling-disabled {
+    overflow-y: hidden;
+}
+
 /* Page titles */
 h1, h2, h3, h4 {
     font-family: 'Rubik', sans-serif;
@@ -55,14 +60,13 @@ section {
 
 .banner {
     position: relative;
-    z-index: 998;
+    z-index: 50;
     background-color: var(--main-bg);
     height: 100vh;
 }
 
 /* Banner content */
 .banner-content {
-    /*margin: 8rem 0 0 0;*/
     margin: 4rem 0 0 0;
     position: relative;
     display: flex;
